@@ -1,0 +1,8 @@
+name: DragonCoreGui-Example
+main: top.wcpe.dragoncoreguiexample.DragonCoreGuiExample
+version: "${version}"
+author: QQ1837019522
+website: [ "https://github.com/wcpe" ]
+depend: [ "DragonCoreGui" ]
+commands:
+  "dcge":

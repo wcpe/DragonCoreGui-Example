@@ -1,0 +1,22 @@
+allowEscClose: false
+through: true
+Functions:
+  keyPress: "( 方法.取当前按下键=='ESCAPE')?{方法.异步执行方法('closeFunction');}:0"
+  open: "方法.异步执行方法('perSecondUpdateTask')"
+  closeFunction: |-
+    方法.关闭界面;
+  perSecondUpdateTask: |-
+    界面变量.x=(方法.取屏幕宽度-方法.取组件值('background_texture','width'))/2;
+    界面变量.y=(方法.取屏幕高度-方法.取组件值('background_texture','height'))/2;
+    方法.延时(1000);
+    方法.异步执行方法('perSecondUpdateTask');
+background_texture:
+  x: "界面变量.x"
+  y: "界面变量.y"
+  width: 260
+  height: 300
+example:
+  x: "界面变量.x+100"
+  y: "界面变量.y+150"
+  width: 200
+  height: 50
